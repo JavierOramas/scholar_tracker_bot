@@ -8,17 +8,17 @@ def read_data(id):
     id = str(id)
 
     try:
-        with open('db/'+id+'.json', 'r') as f:
+        with open('/bin/tracker_bot/db/'+id+'.json', 'r') as f:
             return json.loads(f.readline())
     except:
         return {}
     
 def write_data(id,db):
     id = str(id)
-    with open('db/'+id+'.json', 'w') as f:
+    with open('/bin/tracker_bot/db/'+id+'.json', 'w') as f:
         f.write(json.dumps(db))
 
-config_data = read_config('./config/config_bot.json')
+config_data = read_config('/bin/tracker_bot/config/config_bot.json')
 app = Client(config_data['bot_user_name'], config_data['api_id'], config_data['api_hash'])
 
 @app.on_message(filters.command('add'))
@@ -116,7 +116,7 @@ def see_fee(client, message):
 @app.on_message(filters.command('start'))
 def help(client, message):
     
-    message.reply_text("""Puedes contribuir con el desarrollo aqui: https://github.com/JavierOramas/\no puedes donar para contribuir al desarrollo: 0x64eF391bb5Feae6023440AD12a9870062dd2B342
+    message.reply_text("""Puedes contribuir con el desarrollo aqui: https://github.com/JavierOramas/scholar_tracker_bot\no puedes donar para contribuir al desarrollo: 0x64eF391bb5Feae6023440AD12a9870062dd2B342
 """)
     pass
 
