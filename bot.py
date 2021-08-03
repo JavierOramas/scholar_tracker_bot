@@ -116,7 +116,11 @@ def see_fee(client, message):
 @app.on_message(filters.command('start'))
 def help(client, message):
     
-    message.reply_text("""Puedes contribuir con el desarrollo aqui: https://github.com/JavierOramas/scholar_tracker_bot\no puedes donar para contribuir al desarrollo: 0x64eF391bb5Feae6023440AD12a9870062dd2B342
+    message.reply_text("""/add <boss> <scholar> - Añade al Jefe <boss> el scholar <scholar>\n/get <boss> - Devuelve todos los scholars de <boss>\n
+/getall - muestra todos los scholars de cada boss\n
+/owner <scholar> - muestra quien es el jefe de <scholar>\n
+/free <scholar> - libera a <scholar>\n
+Puedes contribuir con el desarrollo aqui: https://github.com/JavierOramas/scholar_tracker_bot\no puedes donar para contribuir al desarrollo: 0x64eF391bb5Feae6023440AD12a9870062dd2B342
 """)
     pass
 
